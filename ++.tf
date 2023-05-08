@@ -41,10 +41,10 @@ resource "aws_instance" "nagios_instance" {
   ami           = var.ami_id
   instance_type = var.instance_type
   key_name      = var.key_name
-  subnet_id     = ""
+  subnet_id     = element(module.vpc.public_subnets, 0)
   #aws_subnet.public_subnets.id
   vpc_security_group_ids      = [aws_security_group.nagios.id]
   associate_public_ip_address = true
-  user_data                   = file("finalscript.sh")
+  user_data                   = file("ubuntuScript.sh")
   tags                        = local.common_tags
 }
