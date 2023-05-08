@@ -8,6 +8,7 @@ module "vpc" {
   enable_nat_gateway = false
   enable_vpn_gateway = false
 }
+
 resource "aws_security_group" "nagios" {
   name   = "HTTP and SSH"
   vpc_id = module.vpc.vpc_id
@@ -43,8 +44,8 @@ resource "aws_instance" "nagios_instance" {
   key_name      = var.key_name
   subnet_id     = element(module.vpc.public_subnets, 0)
   #aws_subnet.public_subnets.id
-  vpc_security_group_ids      = [aws_security_group.nagios.id]
+  #vpc_security_group_ids      = [aws_security_group.nagios.id]
   associate_public_ip_address = true
-  user_data                   = file("ubuntuScript.sh")
+  user_data                   = file("centosScript.sh")
   tags                        = local.common_tags
 }
