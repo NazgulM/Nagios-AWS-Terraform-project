@@ -205,7 +205,7 @@ make virginia
 ```
 Created the VPC:
 
-![from terminal](/home/ec2-user/Nagios-AWS-Terraform-project/terminal.png)
+![from terminal](terminal.png)
 
 ![vpc](/home/ec2-user/Nagios-AWS-Terraform-project/vpc.png)
 
