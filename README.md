@@ -207,30 +207,30 @@ Created the VPC:
 
 ![from terminal](terminal.png)
 
-![vpc](/home/ec2-user/Nagios-AWS-Terraform-project/vpc.png)
+![vpc](vpc.png)
 
 Created 3 public and 3 private subnets:
 
-![subnets](/home/ec2-user/Nagios-AWS-Terraform-project/subnet.png)
+![subnets](subnet.png)
 
 Created a route table called will route any request to the outside world (“0.0.0.0/0”) through the internet gateway:
 
-![route tables](/home/ec2-user/Nagios-AWS-Terraform-project/rt.png)
+![route tables](rt.png)
 
 Creating an internet gateway called virginia-nagios-vpc and attaching it to the virginia-nagios-vpc (this will allow internet traffic to/from our subnet).
 
-![internet gateway](/home/ec2-user/Nagios-AWS-Terraform-project/ig.png)
+![internet gateway](ig.png)
 
 Creating a security group called Nagios which will allow inbound requests to ports 22 and 80 from the outside world.
 
-![security group](/home/ec2-user/Nagios-AWS-Terraform-project/sg.png)
+![security group](sg.png)
 
 Creating an instance of type t2.micro with ami_id = "ami-002070d43b0a4f171", attaching the Nagios security group to it and placing this instance in the subnet and giving it a public IP.
 Providing this instance with a launch script which will install, start and enable the Apache and Nagios server, and display the Nagios webserver page:
 
-![nagios web](/home/ec2-user/Nagios-AWS-Terraform-project/nagios_web.png)
+![nagios web](nagios_web.png)
 
-![nagios web2](/home/ec2-user/Nagios-AWS-Terraform-project/nagios_web2.png)
+![nagios web2](nagios_web2.png)
 
 terraform commands:
 
@@ -242,7 +242,7 @@ make virginia
 make virginia-destroy
 ```
 
-![destroy](/home/ec2-user/Nagios-AWS-Terraform-project/destroy.png)
+![destroy](destroy.png)
 
 
 
