@@ -245,4 +245,10 @@ make virginia-destroy
 ![destroy](destroy.png)
 
 
+The second task is create all resources in Ohio region using ubuntu machine:
 
+```
+make ohio
+```
+
+![nagios ubuntu](nagios_ubuntu.png)
